@@ -269,6 +269,7 @@ const continueUpload = async () => {
  */
 const ajax = (url, n, params, configs) => {
   const length = params.length;
+  console.log("[Log] params-->", params);
   const result = [];
   let flag = 0; // 控制进度，表示当前位置
   let sum = 0; // 记录请求完成总数

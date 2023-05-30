@@ -146,12 +146,14 @@ router.post("/mergeFile", async (ctx, next) => {
 
   const chunks = await fse.readdir(chunkDir);
   chunks
-    .sort((a, b) => a - b)
+    .sort((a, b) => a.split("_")[1] - b.split("_")[1])
     .map((chunkPath) => {
+      console.log("[Log] chunkPath-->", chunkPath);
       // 合并文件
       let data = fse.readFileSync(`${chunkDir}/${chunkPath}`);
       fse.appendFileSync(path.join(UPLOAD_DIR, name), data);
     });
+  console.log("[Log] chunks-->", chunks);
 
   // 删除临时文件夹
   fse.removeSync(chunkDir, (err) => {

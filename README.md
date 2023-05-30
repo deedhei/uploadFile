@@ -399,7 +399,7 @@ const continueUpload = async () => {
 
 我们只需要调用`handleUploadChunks()`再去上传就可以了直到把数组`requestList`上传完就OK了。
 
-下面我把运行的结果用gif展示出来
+下面我把运行的结果用gif展示出来去
 
 ![大文件上传.gif](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/10b8f6fddb314feeb231e1100a265e22~tplv-k3u1fbpfcp-watermark.image?)
 
